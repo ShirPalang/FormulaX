@@ -61,6 +61,7 @@ body {
   padding: 0.625rem 1.5rem 0.625rem 1.5rem;
   border-radius: 999px;
   font-size: 17px;
+  transition: 250m s;
 }
 .header .tabs .active {
   background-color: #7c3aed;
@@ -91,4 +92,9 @@ body {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.container {
+  height: 100vh;
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
