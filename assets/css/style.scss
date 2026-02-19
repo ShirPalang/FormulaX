@@ -4,12 +4,20 @@ $primary-color: #7c3aed;
 $primary-color-light : #9333ea;
 $black : #000033;
 $gray : #374151;
+$light-gray : #f9fafb;
 
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 
 body {
   font-family: sans-serif;
@@ -27,7 +35,7 @@ body {
   justify-content: space-around;
   align-items: center;
 
-  position: fixed;
+  position: sticky;
   top: 0;
 
   // website logo style
@@ -76,7 +84,7 @@ body {
       color: $gray;
       font-weight: 550;
       gap: 0.5rem;
-      padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+      padding: 10px 24px;
       border-radius: 999px;
       font-size: 17px;
       transition: 250m s;
@@ -122,6 +130,87 @@ body {
 // container style
 
 .container {
-  height: 100vh;
-  background-color: red;
+  height: 100%;
+
+  .calculator-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+
+    .calculator {
+      background-color: #fff;
+      width: 384px;
+      padding: 2rem;
+      border-radius: 1.5rem;
+
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+      .calculator-monitor {
+        background-color: $light-gray;
+        padding: 24px;
+        border-radius: 1rem;
+
+        margin-bottom: 1.5rem;
+
+        .top-number {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 700;
+          color: #6b7280;
+          margin-bottom: 0.5rem;
+        }
+
+        .bottom-number {
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+          font-weight: 700;
+        }
+      }
+
+      .keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+
+        .key {
+          font-size: 1.5rem;
+          line-height: 1.75rem;
+          font-weight: 600;
+
+          padding: 20px 0;
+          border-radius: 0.75rem;
+          border: none;
+          outline: none;
+
+          box-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);
+          background-color: #fff;
+
+          transition: 250ms;
+        }
+
+        .key:hover {
+          box-shadow: 0px 3px 10px #00000023;
+        }
+
+        .op-btn {
+          background-color: #8b5cf6;
+          color: #FFF;
+        }
+
+        .backspace-btn {
+          background-color: #d1d5db;
+        }
+
+        .c-btn {
+          background-color: #ef4444;
+          color: #fff;
+        }
+
+        .zero-btn {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
 }
