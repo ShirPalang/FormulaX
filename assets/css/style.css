@@ -7,7 +7,11 @@ body {
 
 body {
   font-family: sans-serif;
-  background-color: #e5e7eb;
+  background-color: #f3f4f6;
+}
+
+.container {
+  height: 100%;
 }
 
 .header {
@@ -102,46 +106,43 @@ body {
   line-height: 1.25rem;
 }
 
-.container {
-  height: 100%;
-}
-.container .calculator-page {
+.calculator-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 80px);
 }
-.container .calculator-page .calculator {
+.calculator-page .calculator {
   background-color: #fff;
   width: 384px;
   padding: 2rem;
   border-radius: 1.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
-.container .calculator-page .calculator .calculator-monitor {
+.calculator-page .calculator .calculator-monitor {
   background-color: #f9fafb;
   padding: 24px;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
 }
-.container .calculator-page .calculator .calculator-monitor .top-number {
+.calculator-page .calculator .calculator-monitor .top-number {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
   color: #6b7280;
   margin-bottom: 0.5rem;
 }
-.container .calculator-page .calculator .calculator-monitor .bottom-number {
+.calculator-page .calculator .calculator-monitor .bottom-number {
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 700;
 }
-.container .calculator-page .calculator .keys {
+.calculator-page .calculator .keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
 }
-.container .calculator-page .calculator .keys .key {
+.calculator-page .calculator .keys .key {
   font-size: 1.5rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -153,20 +154,20 @@ body {
   background-color: #fff;
   transition: 250ms;
 }
-.container .calculator-page .calculator .keys .key:hover {
+.calculator-page .calculator .keys .key:hover {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.137254902);
 }
-.container .calculator-page .calculator .keys .op-btn {
+.calculator-page .calculator .keys .op-btn {
   background-color: #8b5cf6;
   color: #FFF;
 }
-.container .calculator-page .calculator .keys .backspace-btn {
+.calculator-page .calculator .keys .backspace-btn {
   background-color: #d1d5db;
 }
-.container .calculator-page .calculator .keys .c-btn {
+.calculator-page .calculator .keys .c-btn {
   background-color: #ef4444;
   color: #fff;
 }
-.container .calculator-page .calculator .keys .zero-btn {
+.calculator-page .calculator .keys .zero-btn {
   grid-column: span 2;
 }/*# sourceMappingURL=style.css.map */
