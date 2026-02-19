@@ -7,6 +7,10 @@ $primary-color-light : #9333ea;
 $black : #000033;
 $gray : #374151;
 $light-gray : #f9fafb;
+$box-shadow : 0 10px 15px -3px rgb(0 0 0 / 0.1),
+0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+// بعدا یادت باشه یه سری شدو هارو تغییر بدی
 
 // functions
 
@@ -147,7 +151,7 @@ body {
 
   .calculator {
     background-color: #fff;
-    width: 384px;
+    width: 448px;
     padding: 2rem;
     border-radius: 1.5rem;
 
@@ -216,6 +220,51 @@ body {
 
       .zero-btn {
         grid-column: span 2;
+      }
+    }
+  }
+}
+
+.feed-page {
+  height: calc(100vh - 80px);
+
+  display: flex;
+  justify-content: center;
+
+  .feed {
+    width: 768px;
+    padding: 32px 16px;
+
+    .feed-header {
+      display: flex;
+      background-color: #FFF;
+      font-weight: 600;
+      color: #4b5563;
+      border-radius: 1rem;
+      overflow: hidden;
+      border-bottom-width: 1px;
+      border-color: #faf5ff;
+
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+
+      .header-left {
+        width: 50%;
+        padding: 1rem 0;
+        @include flex-center()
+      }
+
+      .header-right {
+        width: 50%;
+        padding: 1rem 0;
+        @include flex-center()
+      }
+
+      .active {
+        color: $primary-color;
+        border-bottom: 2px solid $primary-color;
       }
     }
   }
