@@ -211,4 +211,60 @@ body {
 .feed-page .feed .feed-header .active {
   color: #7c3aed;
   border-bottom: 2px solid #7c3aed;
+}
+.feed-page .feed .feed-story {
+  background-color: #fff;
+  width: 100%;
+  padding: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  gap: 1rem;
+  overflow-y: auto;
+}
+.feed-page .feed .feed-story .story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+.feed-page .feed .feed-story .story .story-btn {
+  border-radius: 100%;
+  overflow: hidden;
+}
+.feed-page .feed .feed-story .story span {
+  color: #374151;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.feed-page .feed .feed-story .user-profile {
+  background: url(../public/images/profile-pic.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+.feed-page .feed .feed-story .story-ring {
+  width: 64px;
+  height: 64px;
+  padding: 2px;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #7c3aed, #9333ea);
+}
+.feed-page .feed .feed-story .visited {
+  background: #cbcdd1;
+}
+.feed-page .feed .feed-story .add-story .add-story-btn {
+  background: linear-gradient(to bottom right, #f3e8ff, #ede9fe);
+  color: #7c3aed;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
 }/*# sourceMappingURL=style.css.map */
