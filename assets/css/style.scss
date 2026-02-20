@@ -11,6 +11,10 @@ $box-shadow : 0 10px 15px -3px rgb(0 0 0 / 0.1),
 0 4px 6px -4px rgb(0 0 0 / 0.1);
 $box-radius : 1rem;
 
+:root {
+  --story-size: 64px
+}
+
 // بعدا یادت باشه یه سری شدو هارو تغییر بدی
 
 // functions
@@ -314,18 +318,69 @@ body {
 
       // story ring style 
       .story-ring {
-        width: 64px;
-        height: 64px;
+        width: var(--story-size);
+        height: var(--story-size);
         padding: 2px;
         border-radius: 50%;
-        background: linear-gradient(to top right ,$primary-color ,$primary-color-light)
+        background: linear-gradient(to top right, $primary-color , $primary-color-light)
+      }
+
+      // loding style
+      .loader {
+        width: var(--story-size);
+        height: var(--story-size);
+        border: 5px solid #FFF;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        animation: pulse 1s linear infinite;
+      }
+
+      .loader:after {
+        content: '';
+        position: absolute;
+        width: var(--story-size);
+        height: var(--story-size);
+        border: 5px solid #FFF;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: scaleUp 1s linear infinite;
+      }
+
+      @keyframes scaleUp {
+        0% {
+          transform: translate(-50%, -50%) scale(0)
+        }
+
+        60%,
+        100% {
+          transform: translate(-50%, -50%) scale(1)
+        }
+      }
+
+      @keyframes pulse {
+
+        0%,
+        60%,
+        100% {
+          transform: scale(1)
+        }
+
+        80% {
+          transform: scale(1.2)
+        }
       }
 
       .visited {
         background: #cbcdd1;
       }
 
-      // add storu style
+      // add story style
       .add-story {
 
         .add-story-btn {
@@ -333,8 +388,8 @@ body {
           color: $primary-color;
           font-size: 30px;
           @include flex-center();
-          width: 64px;
-          height: 64px;
+          width: var(--story-size);
+          height: var(--story-size);
         }
       }
     }
