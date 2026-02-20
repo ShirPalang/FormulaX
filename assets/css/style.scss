@@ -7,9 +7,11 @@ $primary-color-light : #9333ea;
 $black : #000033;
 $gray : #374151;
 $light-gray : #f9fafb;
+$white: #fff;
 $box-shadow : 0 10px 15px -3px rgb(0 0 0 / 0.1),
 0 4px 6px -4px rgb(0 0 0 / 0.1);
 $box-radius : 1rem;
+$feeds-margin-bottom : 1.5rem;
 
 :root {
   --story-size: 64px
@@ -49,7 +51,7 @@ body {
 .header {
   width: 100%;
   height: 80px;
-  background-color: #fff;
+  background-color: $white;
   box-shadow: 0 1px 2px 0 rgba(0 0 0 / 0.05);
 
   display: flex;
@@ -74,7 +76,7 @@ body {
       font-weight: 700;
       font-size: 1.25rem;
       line-height: 1.75rem;
-      color: #fff;
+      color: $white;
 
       @include flex-center()
     }
@@ -113,7 +115,7 @@ body {
 
     .active {
       background-color: $primary-color;
-      color: #fff;
+      color: $white;
     }
 
     .tab:not(.active):hover {
@@ -155,7 +157,7 @@ body {
   height: calc(100vh - 80px);
 
   .calculator {
-    background-color: #fff;
+    background-color: $white;
     width: 448px;
     padding: 2rem;
     border-radius: 1.5rem;
@@ -200,7 +202,7 @@ body {
         outline: none;
 
         box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-        background-color: #fff;
+        background-color: $white;
 
         transition: 250ms;
       }
@@ -211,7 +213,7 @@ body {
 
       .op-btn {
         background-color: #8b5cf6;
-        color: #FFF;
+        color: $white;
       }
 
       .backspace-btn {
@@ -220,7 +222,7 @@ body {
 
       .c-btn {
         background-color: #ef4444;
-        color: #fff;
+        color: $white;
       }
 
       .zero-btn {
@@ -240,9 +242,10 @@ body {
     width: 768px;
     padding: 32px 16px;
 
+    // header section styles
     .feed-header {
       display: flex;
-      background-color: #FFF;
+      background-color: $white;
       font-weight: 600;
       color: #4b5563;
       border-radius: $box-radius;
@@ -252,7 +255,7 @@ body {
 
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-      margin-bottom: 1.5rem;
+      margin-bottom: $feeds-margin-bottom;
       cursor: pointer;
 
       .header-left {
@@ -273,12 +276,15 @@ body {
       }
     }
 
+    // story section styles
     .feed-story {
       background-color: #fff;
       width: 100%;
       padding: 16px;
       box-shadow: $box-shadow;
       border-radius: $box-radius ;
+
+      margin-bottom: $feeds-margin-bottom;
 
       display: flex;
       gap: 1rem;
@@ -390,6 +396,125 @@ body {
           @include flex-center();
           width: var(--story-size);
           height: var(--story-size);
+        }
+      }
+    }
+
+    // posts section styles
+    .feed-posts {
+
+      .post {
+        padding: 24px;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        border-radius: $box-radius;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .post-left {
+          img {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+
+          }
+        }
+
+        .post-right {
+          width: 100%;
+
+          .post-meta {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+
+            a {
+              text-decoration: none;
+              color: $black;
+              font-weight: 600;
+              font-size: 16px;
+            }
+
+            a:hover {
+              color: $primary-color-light;
+              text-decoration: underline;
+            }
+
+            span {
+              color: #6b7280;
+              font-size: 0.875rem;
+              line-height: 1.25rem;
+            }
+          }
+
+          .post-body {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom right, #f5f3ff, #faf5ff);
+            border-radius: $box-radius;
+            padding: 24px;
+            margin-top: 1rem;
+
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+            flex-wrap: wrap;
+
+            .expression {
+              font-size: 1.5rem;
+              margin-bottom: 0.9rem;
+            }
+
+            .result {
+              color: $primary-color;
+              font-weight: 700;
+              font-size: 1.875rem;
+            }
+          }
+
+          .tags {
+            margin-top: 12px;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+
+            .tag {
+              padding: 4px 8px;
+              font-weight: 500;
+              text-decoration: none;
+              color: $primary-color;
+              transition: 150ms;
+              font-size: 15px;
+              border-radius: 6px;
+            }
+
+            .tag:hover {
+              background-color: #f5f3ff;
+            }
+          }
+
+          .post-actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1.5rem;
+
+            .action {
+              color: $gray;
+              font-size: 16px;
+              font-weight: 600;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.5rem;
+              transition: 200ms;
+              border: none;
+              outline: none;
+              background-color: $white;
+            }
+
+            .action:hover {
+              color: var(--hover-color);
+            }
+          }
         }
       }
     }
