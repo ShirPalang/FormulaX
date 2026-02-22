@@ -672,3 +672,114 @@ body {
     }
   }
 }
+
+.stories-page {
+  width: 100%;
+  @include flex-center();
+
+  .main {
+    width: 1152px;
+    padding: 32px 16px;
+
+    .title {
+      color: $black;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    .stories {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      overflow-y: auto;
+      scrollbar-width: none;
+      padding-bottom: 1rem;
+      padding-top: 0.2rem;
+
+      .story {
+        min-width: 128px;
+        max-width: 128px;
+        height: 192px;
+        box-shadow: $box-shadow;
+        border-radius: $box-radius;
+        overflow: hidden;
+
+        .story-body {
+          background: linear-gradient(to bottom right, #8b5cf6, #d946ef);
+          width: 100%;
+          height: 100%;
+          position: relative;
+          @include flex-center();
+          flex-wrap: wrap;
+          color: #fff;
+          padding: 16px;
+
+          .story-footer {
+            background: linear-gradient(to top, #0009, #0000);
+            padding: 0.75rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            p {
+              color: #fff;
+              font-weight: 600;
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+
+      .story.add-story {
+
+        .story-body {
+
+          i {
+            font-size: 48px;
+          }
+
+          .story-footer {
+            @include flex-center();
+          }
+        }
+      }
+
+      .story.user-story {
+        .story-body {
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          .user-pic {
+            background: url(../public/images/profile-pic.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            border: 2px solid #ffffff;
+            position: absolute;
+            left: 0.75rem;
+            top: 0.75rem;
+          }
+
+          .math-story {
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .story.unseen {
+        outline: 3px solid $primary-color;
+        border: 1px solid #fff;
+      }
+    }
+
+    .footer-story {
+      font-size: 90px;
+    }
+  }
+}
