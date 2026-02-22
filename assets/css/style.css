@@ -622,5 +622,40 @@ body {
   border: 1px solid #fff;
 }
 .stories-page .main .footer-story {
-  font-size: 90px;
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 32px;
+  margin-top: 3rem;
+}
+.stories-page .main .footer-story .title {
+  font-size: 1.5rem;
+}
+.stories-page .main .footer-story .description {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 28px;
+  text-align: justify;
+}
+.stories-page .main .footer-story .contact {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.stories-page .main .footer-story .contact a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #000033;
+  font-weight: 600;
+  gap: 10px;
+  font-size: 16px;
+}
+.stories-page .main .footer-story .contact a img {
+  width: 64px;
+  height: 64px;
+}
+.stories-page .main .footer-story p {
+  color: #4b5563;
 }/*# sourceMappingURL=style.css.map */

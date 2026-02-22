@@ -779,7 +779,45 @@ body {
     }
 
     .footer-story {
-      font-size: 90px;
+      background-color: #fff;
+      box-shadow: $box-shadow;
+      border-radius: $box-radius;
+      padding: 32px;
+      margin-top: 3rem;
+
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #4b5563;
+        line-height: 28px;
+        text-align: justify;
+      }
+
+      .contact {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        a {
+          display: flex;
+          flex-direction: column;
+          @include link();
+          gap: 10px;
+          font-size: 16px;
+          img {
+            width: 64px;
+            height: 64px;
+          }
+
+        }
+      }
+
+      p {
+        color: #4b5563;
+      }
     }
   }
 }
