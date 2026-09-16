@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router";
 
 import { RootLayout } from "../components/layout/RootLayout";
+import { Home } from "../pages/Home";
 
 const router = createBrowserRouter([
   {
     path: '/', element: <RootLayout />, children: [
-      { index: true, element: <h1>calculator</h1> },
+      { index: true, element: <Home/> },
       { path: 'feed', element: <h1>feed</h1> },
       { path: 'calcflow', element: <h1>reels</h1> },
       { path: 'stories', element: <h1>stories</h1> },
