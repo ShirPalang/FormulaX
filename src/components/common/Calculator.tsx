@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useHomeCalc } from "../../hooks/useHomeCalc"
 import { CalcButtons } from "./CalcButtons"
-import { calculate } from "../../calculate"
+import { calculate } from "../../utility/calculate"
+import type { CalculatorProps } from "./Calculato.type"
+import toast from "react-hot-toast"
 
-export const Calculator = () => {
+
+export const Calculator = ({ onEqual }: CalculatorProps) => {
 
   const { operations, setOperations } = useHomeCalc()
 
@@ -25,6 +28,8 @@ export const Calculator = () => {
         op = '*'
       } else if (value === '÷') {
         op = '/'
+      } else if (value === '%') {
+        toast.error('کار نمیکنه به ولله')
       } else {
         op = value
       }
@@ -40,7 +45,12 @@ export const Calculator = () => {
       const result: string = String(calculate(operations!))
 
       setPrevOP(`${operations}=${result}`)
-      setOperations(result);
+      if (onEqual) {
+        onEqual(result, operations!)
+      } else {
+        setOperations(result)
+      }
+
     } else if (type === 'clear') {
       setOperations('')
     }
