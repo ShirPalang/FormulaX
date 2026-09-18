@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RiAddLine, RiCloseCircleLine, RiCloseLargeLine } from "react-icons/ri"
+import { RiAddLine, RiCloseLargeLine } from "react-icons/ri"
 import { Calculator } from "./Calculator";
 
 const PostButton = () => {
