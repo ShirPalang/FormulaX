@@ -7,7 +7,7 @@ const Story = ({ status }: StoryStatus) => {
   return (
     <div 
     className={`relative shrink-0 w-24 h-35 bg-linear-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-2xl 
-    overflow-hidden shadow-lg ring-2 ring-gray-300 dark:ring-gray-600 ${status === 'loading' && 'animate-pulse'}`}>
+    overflow-hidden shadow-lg ring-2 ring-gray-300 dark:ring-gray-600 ${status === 'loading' && ''}`}>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center p-1.5 md:p-2 bg-black/10">
         {status === "add" && (
