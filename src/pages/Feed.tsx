@@ -1,5 +1,7 @@
 import { RiCompass3Line, RiUserHeartLine } from "react-icons/ri"
 import StoryBox from "../components/common/StoryBox"
+import Post from "../components/common/Post"
+import PostButton from "../components/common/PostButton"
 
 const Feed = () => {
   return (
@@ -18,7 +20,20 @@ const Feed = () => {
       </div>
 
       {/* story container */}
-      <StoryBox/>
+      <StoryBox />
+
+      {/* posts container */}
+      <div className="space-y-4 md:space-y-6">
+        {/* all posts */}
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+      </div>
+
+      {/* post button */}
+      <PostButton/>
+
     </div>
   )
 }
