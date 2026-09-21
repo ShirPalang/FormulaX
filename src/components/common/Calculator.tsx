@@ -4,9 +4,11 @@ import { CalcButtons } from "./CalcButtons"
 import { calculate } from "../../utility/calculate"
 import type { CalculatorProps } from "./Calculato.type"
 import toast from "react-hot-toast"
+import { RiSendPlaneFill } from "react-icons/ri"
+import NewHashtag from "./NewHashtag"
 
 
-export const Calculator = ({ onEqual }: CalculatorProps) => {
+export const Calculator = ({ onEqual, type, onClose }: CalculatorProps) => {
 
   const { operations, setOperations } = useHomeCalc()
 
@@ -67,6 +69,30 @@ export const Calculator = ({ onEqual }: CalculatorProps) => {
           </div>
         </div>
 
+        {/* add hashtag section */}
+
+        {
+          type && (
+            <div className=" pb-2">
+              <div className="flex gap-2">
+                <div className="flex-1 relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-violet-500 font-medium text-sm">#</span>
+                  <input placeholder="Add hashtag..." className="w-full bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg pl-7 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 placeholder:text-gray-400 dark:placeholder:text-gray-500" maxLength={20} type="text" />
+                </div>
+
+                <button className="bg-violet-100 dark:bg-violet-900/30 hover:bg-violet-200 dark:hover:bg-violet-900/50 text-violet-600 dark:text-violet-400 rounded-lg px-3 md:px-4 py-2 font-medium transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap cursor-pointer text-xs md:text-sm">Add</button>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5 md:gap-2 mt-2">
+                <NewHashtag />
+
+              </div>
+
+              <p className="text-[10px] md:text-xs text-gray-400 dark:text-gray-500 mt-1">3/5 hashtags</p>
+            </div>
+          )
+        }
+
         {/* buttons */}
         <div className="grid grid-cols-4 gap-2 md:gap-3">
           <CalcButtons type="clear" value="C" onClick={handleCalculator} />
@@ -96,6 +122,18 @@ export const Calculator = ({ onEqual }: CalculatorProps) => {
 
 
         </div>
+
+        {
+          type && (
+            <div className="flex justify-around mt-4 gap-3">
+              <button className="flex-1 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-gray-200 rounded-xl py-2.5 md:py-3 font-semibold text-sm md:text-base transition-colors duration-200 whitespace-nowrap cursor-pointer"
+                onClick={onClose}
+              >Cancel</button>
+              <button className="flex-1 bg-violet-600 hover:bg-violet-700 text-white rounded-xl py-2.5 md:py-3 font-semibold text-sm md:text-base transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap cursor-pointer flex justify-center gap-2"><RiSendPlaneFill /> Post</button>
+            </div>
+          )
+        }
+
 
       </div>
     </div>
