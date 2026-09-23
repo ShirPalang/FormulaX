@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router";
 import { RootLayout } from "../components/layout/RootLayout";
 import Home from "../pages/Home";
 import Feed from "../pages/Feed"
-import CalcFlow from "../components/common/CalcFlow";
+import CalcFlow from "../pages/CalcFlow";
 
 const router = createBrowserRouter([
   {

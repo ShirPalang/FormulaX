@@ -5,7 +5,7 @@ const BottomNavbar = () => {
 
   const activeLink = (isActive: Boolean) => {
     return isActive ? "flex flex-col items-center justify-center gap-0.5 flex-1 h-full transition-colors duration-200 cursor-pointer relative text-violet-600"
-      : "flex flex-col items-center justify-center gap-0.5 flex-1 h-full transition-colors duration-200 cursor-pointer relative text-white"
+      : "flex flex-col items-center justify-center gap-0.5 flex-1 h-full transition-colors duration-200 cursor-pointer relative text-gray-500 dark:text-gray-400"
   }
 
   return (
@@ -15,7 +15,7 @@ const BottomNavbar = () => {
         <NavLink className={({ isActive }) => activeLink(isActive)}
           to="/" data-discover="true">
           <div className="relative">
-            <RiCalculatorLine className="text-2xl" />
+            <RiCalculatorLine className="text-2xl " />
           </div>
         </NavLink>
 
