@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react"
-import { RiChat3Line, RiHeartFill, RiHeartLine, RiRepeat2Line, RiShareForwardLine } from "react-icons/ri"
+import { useRef, useState } from "react"
+import { RiHeartFill, RiHeartLine, RiRepeat2Line, RiShareForwardLine } from "react-icons/ri"
 import { Link } from "react-router"
 
 const CalcFlowPost = () => {

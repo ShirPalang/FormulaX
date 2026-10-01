@@ -2,6 +2,7 @@ import { RiCompass3Line, RiUserHeartLine } from "react-icons/ri"
 import StoryBox from "../components/common/StoryBox"
 import Post from "../components/common/Post"
 import PostButton from "../components/common/PostButton"
+import CalcFlowCarousel from "../components/common/CalcFlowCarousel"
 
 const Feed = () => {
   return (
@@ -29,10 +30,15 @@ const Feed = () => {
         <Post />
         <Post />
         <Post />
+        <CalcFlowCarousel />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
       </div>
 
       {/* post button */}
-      <PostButton/>
+      <PostButton />
 
     </div>
   )
